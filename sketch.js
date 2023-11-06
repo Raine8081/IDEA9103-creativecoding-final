@@ -8,22 +8,20 @@ let stepSize = 10;
 let trail = [];
 let squareX;
 let squareY;
-let squareSize = 50; // 设置squareSize的初始值
-
-
+let squareSize = 50; // add the first squaresize
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
- 
+ //I delete the noloop to make the animation easier to be seen 
   noStroke();
   background(250);
-  frameRate(20);
-
+  frameRate(10);//the speed of animate
+ //to control how many space the rect shape would be move 
   walkerX = width / 2;
   walkerY = height / 2;
   squareX = random(0, width - squareSize);
   squareY = random(0, height - squareSize);
-
+// color
   let grayColor = color(150);
   let blueColor = color(21, 29, 176);
   let redColor = color(161, 7, 2);
@@ -35,7 +33,7 @@ function setup() {
   scaleX = windowWidth / 800;
   scaleY = windowHeight / 800;
 }
-
+// the window could be maintain the same shape of canvas
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   scaleX = windowWidth / 800;
