@@ -9,8 +9,8 @@ let trail = [];
 let squareX;
 let squareY;
 let squareSize = 50; // add the first squaresize
-let noiseOffsetX = 2000;
-let noiseOffsetY = 1000; 
+let noiseOffsetX = 20000;
+let noiseOffsetY = 10000; 
 let squareNoiseOffsetX;
 let squareNoiseOffsetY;
 
