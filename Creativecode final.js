@@ -16,6 +16,7 @@ function setup() {
   noStroke();
   background(250);
   frameRate(10);//the speed of animate
+  randomSeed(123); //add a fixed seed to move
  //to control how many space the rect shape would be move 
   walkerX = width / 2;
   walkerY = height / 2;
