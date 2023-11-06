@@ -13,6 +13,7 @@ let noiseOffsetX = 20000;
 let noiseOffsetY = 10000; 
 let squareNoiseOffsetX;
 let squareNoiseOffsetY;
+let isAnimating = true; //make sure the animate stop or not
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -50,6 +51,8 @@ function windowResized() {
 }
 
 function draw() {
+  //let the animate begin
+  if (isAnimating) { 
   //the background has changed the ocpaity, which could easily find the trail of large rectangle
   background(250,250,250,25);
  //random walker!!
@@ -189,4 +192,7 @@ function draw() {
     rect((nums1[i * 2] + 220) * scaleX, (nums2[i] + 400) * scaleY, 100 * scaleX, 80 * scaleY);
   }
 }
-
+}
+//press mouse to stop
+function mousePressed() {
+  isAnimating = !isAnimating; // change the animation
