@@ -41,24 +41,28 @@ function windowResized() {
 }
 
 function draw() {
+  //the background has changed the ocpaity, which could easily find the trail of large rectangle
   background(250,250,250,25);
-
+ //random walker!!
+ //add the random to make the shape changes
   squareX += random(-stepSize, stepSize);
   squareY += random(-stepSize, stepSize);
+
+ // in the right constrain between
   squareX = constrain(squareX, 0, width - squareSize);
   squareY = constrain(squareY, 0, height - squareSize);
-
+// Actually it is a test to make sure the shape moving randomly,but I kept it
   fill(255, 0, 0);
   rect(squareX, squareY, squareSize, squareSize);
-
+//the random move
   walkerX = lerp(walkerX, mouseX, 0.05);
   walkerY = lerp(walkerY, mouseY, 0.05);
-
+//And adding the trail of the shape moves
   for (let i = 0; i < trail.length; i++) {
     fill(random(colors));
     rect(trail[i].x, trail[i].y, trail[i].width, trail[i].height);
   }
-
+//vertical rectangles
   for (let i = 1; i < 10; i++) {
     if (i == 2 || i == 4 || i == 7) {
       let x = width / 40 * i * 5;
@@ -66,6 +70,7 @@ function draw() {
       let w = width / 50;
       let h = height / 2;
       rect(x, y, w, h);
+ // and the small rect with 3 colors
       for (let k = 0; k < 15; k++) {
         fill(random(colors));
         rect(x, random(0, h), w, 20);
@@ -77,6 +82,7 @@ function draw() {
       let h = height;
       fill(255, 229, 6);
       rect(x, y, w, h);
+     
       for (let k = 0; k < 15; k++) {
         fill(random(colors));
         rect(x, random(0, h), w, 20);
@@ -84,7 +90,7 @@ function draw() {
       fill(255, 229, 6);
     }
   }
-
+  // the random-walkers changing big rectangles
   fill(random(colors));
   rect(walkerX, walkerY, random(200, 400), random(50, 600));
 
@@ -96,7 +102,7 @@ function draw() {
 
   fill(random(colors));
   rect(walkerX / 3, walkerY * 10, random(200, 400), random(600, 1800));
-
+ ////horizontal rectangles
   for (let j = 1; j < 8; j++) {
     if (j == 1 || j == 5 || j == 6) {
       let x = 0;
@@ -104,6 +110,7 @@ function draw() {
       let w = width / 2;
       let h = height / 40;
       rect(x, y, w, h);
+  // the small 3-color rectangle
       for (let k = 0; k < 15; k++) {
         rect(random(0, w), y, 20, h);
         fill(random(colors));
@@ -167,3 +174,4 @@ function draw() {
     rect((nums1[i * 2] + 220) * scaleX, (nums2[i] + 400) * scaleY, 100 * scaleX, 80 * scaleY);
   }
 }
+
