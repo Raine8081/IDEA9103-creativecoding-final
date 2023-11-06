@@ -128,7 +128,7 @@ function draw() {
       fill(255, 229, 6);
     }
   }
-
+// the fixed rectangles(7 groups in total)
   fill(random(colors));
   rect(walkerX / 3, walkerY / 3, random(200, 400), random(200, 400));
 
