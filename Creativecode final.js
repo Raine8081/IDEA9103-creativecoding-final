@@ -9,6 +9,10 @@ let trail = [];
 let squareX;
 let squareY;
 let squareSize = 50; // add the first squaresize
+let noiseOffsetX = 2000;
+let noiseOffsetY = 1000; 
+let squareNoiseOffsetX;
+let squareNoiseOffsetY;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -20,8 +24,12 @@ function setup() {
  //to control how many space the rect shape would be move 
   walkerX = width / 2;
   walkerY = height / 2;
-  squareX = random(0, width - squareSize);
-  squareY = random(0, height - squareSize);
+  squareX = noise(squareNoiseOffsetX) * (width - squareSize);
+  squareY = noise(squareNoiseOffsetY) * (height - squareSize);
+
+  squareNoiseOffsetX += 0.01;
+  squareNoiseOffsetY += 0.01;
+
 // color
   let grayColor = color(150);
   let blueColor = color(21, 29, 176);
