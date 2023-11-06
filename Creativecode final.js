@@ -110,7 +110,7 @@ function draw() {
   rect(walkerX * 5, walkerY * 5, random(200, 400), random(200, 700));
 
   fill(random(colors));
-  rect(walkerX / 3, walkerY * 10, random(200, 400), random(600, 1800));
+  rect(walkerX / 3, walkerY * 10, random(200, 400), random(500, 1200));
  ////horizontal rectangles
   for (let j = 1; j < 8; j++) {
     if (j == 1 || j == 5 || j == 6) {
@@ -137,10 +137,16 @@ function draw() {
       fill(255, 229, 6);
     }
   }
-// the fixed rectangles(7 groups in total)
+// the animated big rectangle
   fill(random(colors));
-  rect(walkerX / 3, walkerY / 3, random(200, 400), random(200, 400));
+  rect(walkerX / 3, walkerY / 3, random(300, 400), random(200, 400));
 
+    fill(random(colors));
+  rect(walkerX / 5, walkerY * 10, random(350, 400), random(500, 1000));
+
+    fill(random(colors));
+  rect(walkerX / 3, walkerY * 10, random(350, 500), random(500, 1200));
+// the fixed rectangles(7 groups in total)
   for (let i = 0; i < 8; i++) {
     noStroke();
     fill(colors[1]);
